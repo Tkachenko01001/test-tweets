@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Tkachenko01001/test-tweets/static/css/main.98ec47ca.css",
+    "main.js": "/Tkachenko01001/test-tweets/static/js/main.b2d1426b.js",
+    "static/media/picture21.png": "/Tkachenko01001/test-tweets/static/media/picture21.b3d9942b3f9d5dad1ff0.png",
+    "static/media/Logo.svg": "/Tkachenko01001/test-tweets/static/media/Logo.eb74a9cfcc8c2946c8beb2961898c04b.svg",
+    "index.html": "/Tkachenko01001/test-tweets/index.html",
+    "main.98ec47ca.css.map": "/Tkachenko01001/test-tweets/static/css/main.98ec47ca.css.map",
+    "main.b2d1426b.js.map": "/Tkachenko01001/test-tweets/static/js/main.b2d1426b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.98ec47ca.css",
+    "static/js/main.b2d1426b.js"
+  ]
+}
