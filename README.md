@@ -2,7 +2,7 @@
 
 Test-tweets.
 
-A set of tweet cards with the ability to subscribe by clicking on the button
+A set of tweet cards with the ability to subscribe by clicking on the button.
 
 # Getting Started with Create React App
 
