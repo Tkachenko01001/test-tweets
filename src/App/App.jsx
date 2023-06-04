@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,16 +9,18 @@ axios.defaults.baseURL = "https://647a1260a455e257fa644557.mockapi.io/api/tweets
 
 const App = () => {
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(4);
   const [users, setUsers] = useState([]);
   const [hasNextPage, setHasNextPage] = useState(true);
 
   const notify = () => toast("that's it, no more tweets!");
 
   useEffect(() => {
-    axios.get(`/users?page=${page}&limit=${limit}`)
-      .then(({ data }) => {
-        if (data.length < limit) {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`/users?page=${page}&limit=4`);
+        const { data } = response;
+
+        if (data.length < 4) {
           setHasNextPage(false);
         }
 
@@ -27,11 +29,13 @@ const App = () => {
         if (!hasNextPage) {
           notify();
         }
-      })
-      .catch(error => {
+      } catch (error) {
         console.log(error);
-      });
-  }, [page, limit, hasNextPage]);
+      }
+    };
+
+    fetchData();
+  }, [page, hasNextPage]);
 
   const handleButtonClick = async (_, user) => {
     const updatedFollowers = user.isFollowing ? user.followers - 1 : user.followers + 1;
